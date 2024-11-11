@@ -1,9 +1,9 @@
 const displayed_cars = [
-  {title:"GalaxyDestroyer", model:"F20", year:"2006", value:500, info:"short description of car", image:"placeholder.jpg", id:1},
-  {title:"StarDevourer", model:"F20", year:"2006", value:500, info:"short description of car", image:"placeholder.jpg", id:2},
-  {title:"WorldEnder", model:"F20", year:"2006", value:500, info:"short description of car", image:"placeholder.jpg", id:3},
-  {title:"AsteroidDemolisher", model:"F20", year:"2006", value:500, info:"short description of car", image:"placeholder.jpg", id:4},
-  {title:"Glorp", model:"F20", year:"2006", value:500, info:"Glorp", image:"glorp.jpg", id:5}
+  {title:"GalaxyDestroyer", model:"F20", year:"2006", value:500, info:"short description of car", id:1},
+  {title:"StarDevourer", model:"F20", year:"2006", value:500, info:"short description of car", id:2},
+  {title:"WorldEnder", model:"F20", year:"2006", value:500, info:"short description of car", id:3},
+  {title:"AsteroidDemolisher", model:"F20", year:"2006", value:500, info:"short description of car", id:4},
+  {title:"Glorp", model:"F20", year:"2006", value:500, info:"Glorp", id:5}
 ]
 
 const car_images = [
