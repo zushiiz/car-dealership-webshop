@@ -1,9 +1,17 @@
 const displayed_cars = [
   {title:"GalaxyDestroyer", model:"F20", year:"2006", value:500, info:"short description of car", image:"placeholder.jpg", id:1},
-  {title:"StarDevourer", model:"F20", year:"2006", value:500, info:"short description of car", image:"placeholder2.jpg", id:2},
-  {title:"WorldEnder", model:"F20", year:"2006", value:500, info:"short description of car", image:"placeholder3.jpg", id:3},
-  {title:"AsteroidDemolisher", model:"F20", year:"2006", value:500, info:"short description of car", image:"placeholder4.jpg", id:4},
+  {title:"StarDevourer", model:"F20", year:"2006", value:500, info:"short description of car", image:"placeholder.jpg", id:2},
+  {title:"WorldEnder", model:"F20", year:"2006", value:500, info:"short description of car", image:"placeholder.jpg", id:3},
+  {title:"AsteroidDemolisher", model:"F20", year:"2006", value:500, info:"short description of car", image:"placeholder.jpg", id:4},
   {title:"Glorp", model:"F20", year:"2006", value:500, info:"Glorp", image:"glorp.jpg", id:5}
+]
+
+const car_images = [
+  {id:1, image:"placeholder.jpg", sImg:"placeholderSmall.jpg", bImg:"placeholderBig.jpg"},
+  {id:2, image:"placeholder.jpg", sImg:"placeholderSmall.jpg", bImg:"placeholderBig.jpg"},
+  {id:3, image:"placeholder.jpg", sImg:"placeholderSmall.jpg", bImg:"placeholderBig.jpg"},
+  {id:4, image:"placeholder.jpg", sImg:"placeholderSmall.jpg", bImg:"placeholderBig.jpg"},
+  {id:5, image:"placeholder.jpg", sImg:"placeholderSmall.jpg", bImg:"placeholderBig.jpg"}
 ]
 
 const car_details = [
@@ -17,13 +25,14 @@ const car_details = [
 export default function CarContainer(){
   const carInfo = displayed_cars.map((item, index) => {
     const isSpecial = (index % 3 === 0);
+    const carImg = car_images[item.id-1];
 
-    console.log(item.image);
+    console.log(car_images[item.id]);
     
     return (
     <div className={`container${isSpecial ? "-special" : ""}`}
     style={{
-      backgroundImage: isSpecial ? `url(${item.image})` : "none",
+      backgroundImage: isSpecial ? `url(${carImg.image})` : "none",
       backgroundSize: "cover",
       backgroundPosition: "center",
     }}
@@ -31,14 +40,17 @@ export default function CarContainer(){
     >
       <section className="public-content">
 
-        <img src={item.image} alt="this is car" className="car-image"></img>
+        <picture className="car-image">
+          <source media="(min-width:600px)" srcSet={carImg.image} />
+          <img src={carImg.sImg} alt="this is car" />
+        </picture>
 
         <section className="text-contents">
           <h3 className="car-name">{item.year} {item.title} {item.model}</h3>
           <span>{item.value} Dabloons</span>
           <p className="car-info">{item.info}</p>
           <div className="details-button">
-            <button onClick={() => Popup(displayed_cars, car_details, item.id)}>
+            <button onClick={() => Popup(displayed_cars, car_details, car_images, item.id)}>
               Details
             </button>
           </div>
@@ -48,8 +60,6 @@ export default function CarContainer(){
     );
   });      
 
-
-
   return(
     <div className="car-container">
       {carInfo}
@@ -57,10 +67,11 @@ export default function CarContainer(){
   )
 }
 
-function Popup(list, list2, id){
+function Popup(list, list2, list3, id){
   const screen = document.body;
   const detailsList = list[id-1];
   const detailsList2 = list2[id-1];
+  const imgList = list3[id-1];
 
   const popup = document.createElement("div");
   popup.id = "popup";
@@ -73,13 +84,8 @@ function Popup(list, list2, id){
   popupBox.classList.add("popup-style");
 
   const img = document.createElement("img");
-  img.src = detailsList.image;
+  img.src = imgList.image;
   popupBox.appendChild(img);
-
-  // const left = document.createElement("section");
-  // popupBox.appendChild(left);
-  // const right = document.createElement("section");
-  // popupBox.appendChild(right);
 
   const buttonContainer = document.createElement("div");
   buttonContainer.classList.add("button-container");
