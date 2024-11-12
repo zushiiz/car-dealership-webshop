@@ -7,13 +7,17 @@ const displayed_cars = [
 ]
 
 const car_images = [
-  {id:1, image:"placeholder.jpg", sImg:"placeholderSmall.jpg", bImg:"placeholderBig.jpg"},
-  {id:2, image:"placeholder.jpg", sImg:"placeholderSmall.jpg", bImg:"placeholderBig.jpg"},
-  {id:3, image:"placeholder.jpg", sImg:"placeholderSmall.jpg", bImg:"placeholderBig.jpg"},
-  {id:4, image:"placeholder.jpg", sImg:"placeholderSmall.jpg", bImg:"placeholderBig.jpg"},
-  {id:5, image:"placeholder.jpg", sImg:"placeholderSmall.jpg", bImg:"placeholderBig.jpg"}
+  {id:1, sImg:"carNormal.jpg", image:"carSmall.png", banner:"carBanner.png"},
+  {id:2, sImg:"carNormal.jpg", image:"carSmall.png", banner:"carBanner.png"},
+  {id:3, sImg:"carNormal.jpg", image:"carSmall.png", banner:"carBanner.png"},
+  {id:4, sImg:"carNormal.jpg", image:"carSmall.png", banner:"carBanner.png"},
+  {id:5, sImg:"carNormal.jpg", image:"carSmall.png", banner:"carBanner.png"}
 ]
-
+/*
+normal image - 1269x719
+small image - 800x400
+banner image - 1920x600
+*/
 const car_details = [
   {engine:"2.0L I4 Engine - 150hp", trans:"Manual", milage:"25,000 km", fuel:"Milk", id:1},
   {engine:"2.0L I4 Engine - 150hp", trans:"Manual", milage:"25,000 km", fuel:"Milk", id:2},
@@ -32,7 +36,7 @@ export default function CarContainer(){
     return (
     <div className={`container${isSpecial ? "-special" : ""}`}
     style={{
-      backgroundImage: isSpecial ? `url(${carImg.image})` : "none",
+      backgroundImage: isSpecial ? `url(${carImg.banner})` : "none",
       backgroundSize: "cover",
       backgroundPosition: "center",
     }}
