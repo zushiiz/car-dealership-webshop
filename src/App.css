@@ -306,7 +306,7 @@ h4{
     box-shadow: none;
   }
 
-  .public-content picture{
+  .container picture{
     width:100%;
     margin-bottom: 7vh;
   }
@@ -358,9 +358,15 @@ h4{
     grid-template-rows: 20% 80%;
   }
 
-  .company-img{
+  .about-container picture{
     grid-area: 1 / 2 / span 2;
     width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+  .company-img{
+    width: 10%;
   }
 
   .popup-style{
