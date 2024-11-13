@@ -14,6 +14,7 @@ const car_images = [
   {id:5, sImg:"carNormal.jpg", image:"carSmall.png", banner:"carBanner.png"}
 ]
 /*
+note carNormal and carSmall img names are switched - too lazy to rename picture
 normal image - 1269x719
 small image - 800x400
 banner image - 1920x600
