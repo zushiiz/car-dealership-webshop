@@ -7,7 +7,7 @@ const displayed_cars = [
 ]
 
 const car_images = [
-  {id:1, sImg:"carNormal.jpg", image:"carSmall.png", banner:"carBanner.png"},
+  {id:1, sImg:"carNormal.jpg", image:"carSmall.png", banner:"placeholder.jpg"},
   {id:2, sImg:"carNormal.jpg", image:"carSmall.png", banner:"carBanner.png"},
   {id:3, sImg:"carNormal.jpg", image:"carSmall.png", banner:"carBanner.png"},
   {id:4, sImg:"carNormal.jpg", image:"carSmall.png", banner:"carBanner.png"},
