@@ -244,9 +244,9 @@ button{
 
 .staff-container picture{
   min-width: 80%;
-  width: 10em;
+  max-width: 20em;
 }
-.staff-container img{
+.staff-img{
   width: 100%;
 }
 
@@ -366,6 +366,8 @@ h4{
 
   .container picture{
     width:100%;
+    height: 100%;
+    max-height: 18em;
   }
 
   .car-content p{
@@ -389,7 +391,7 @@ h4{
   }
 
   .container .car-content{
-    height: 70%;
+    min-height: 70%;
   }
 
   .container-special .details-button{
@@ -459,11 +461,7 @@ h4{
   .staff-container .public-content{
     min-height: 20em;
     width: 90%;
-  }
-  .staff-container img{
-    width: 100%;
-    max-width: 20em;
-  }
+  }   
 
 }
 
@@ -479,6 +477,6 @@ h4{
     width: 15vw;
   }
   .container .car-content{
-    height: 80%;
+    min-height: 80%;
   }
 }

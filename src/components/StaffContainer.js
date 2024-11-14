@@ -1,5 +1,5 @@
 const displayed_staff = [
-  {name:"Staff Staffson", position:"CEO", image:"placeholder.jpg", id:1},
+  {name:"Staff Staffson", position:"CEO", image:"staff-no-img.png", id:1},
   {name:"Staff Staffson", position:"N/A", image:"staff-no-img.png", id:2},
   {name:"Staff Staffson", position:"N/A", image:"staff-no-img.png", id:3},
   {name:"Staff Staffson", position:"N/A", image:"staff-no-img.png", id:4},
