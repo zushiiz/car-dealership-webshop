@@ -11,7 +11,7 @@
 
   --box-shadow:0 0 3px 3px black;
   --transparent-blue:rgb(0, 0, 51, 0.5);
-  --footer-col:var(--button-col); 
+  --footer-col:var(--secondary-col); 
   --round-edge:10px;
 }
 
@@ -101,6 +101,10 @@ input{
   align-items: center;
 }
 
+.hamburger-menu a:hover{
+  transform: scale(1.1);
+}
+
 /* hamburger */
 .hamburger .hamburger-bar, .hamburger:after, .hamburger:before{
 content: '';
@@ -138,7 +142,7 @@ transition: 0.4s;
 
 .hamburger-menu.is-active{
   right: 0;
-  background-color: var(--dark-comp-col);
+  background-color: var(--secondary-col);
 }
 
 
@@ -157,17 +161,17 @@ main{
 }
 
 button{
-  border:solid var(--secondary-col);
-  background-color: var(--dark-comp-col);
+  border:solid var(--dark-comp-col);
+  background-color: var(--secondary-col);
   color: var(--text-col);
 }
 
 .public-content{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   background-color: var(--primary-col);
-  padding: 1em 0;
   box-shadow: var(--box-shadow);
   border-radius: var(--round-edge);
 }
@@ -191,14 +195,23 @@ button{
   width: 100%;
 }
 
-.car-container .public-content{
+.car-content{
   margin: 1em 0;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary-col);
+  padding: 1em 0;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--round-edge);
 }
 
 .details-button{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  margin-bottom: 2em;
 }
 
 .details-button button{
@@ -218,17 +231,25 @@ button{
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-
 }
 
 .staff-container .public-content{
   margin: 1.5em 0.7em;
   padding: 0.5em;
+  max-width: 100%;
+  display:grid;
+  grid-template-rows: 80% 20%;
+  justify-items: center;
 }
 
-.staff-container img{
-  max-width: 10em;
+.staff-container picture{
+  min-width: 80%;
+  width: 10em;
 }
+.staff-container img{
+  width: 100%;
+}
+
 
 /* staff container */
 
@@ -238,13 +259,13 @@ button{
   margin: 3em 1em;
 }
 
+.about-container .public-content{
+  padding: 1em 0;
+}
+
 .about-container .public-content > *{
   margin: 1em 1em;
 }
-
-/* .company-img{
-  width: 90%;
-} */
 
 /* Popup */
 
@@ -322,7 +343,7 @@ h4{
   .container-special picture{
     display: none;
   }
-  .container-special .public-content{
+  .container-special .car-content{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -345,14 +366,13 @@ h4{
 
   .container picture{
     width:100%;
-    margin-bottom: 7vh;
   }
 
-  .public-content p{
+  .car-content p{
     margin-bottom: 9vh;
   }
 
-  .car-container .public-content{
+  .car-content{
     padding: 0;
     margin: 0;
     width: 80%;
@@ -366,6 +386,10 @@ h4{
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .container .car-content{
+    height: 70%;
   }
 
   .container-special .details-button{
@@ -393,6 +417,8 @@ h4{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 20% 80%;
     box-shadow: none;
+    min-height: 40vh;
+    max-height: 80vh;
   }
 
   .about-container .public-content > picture{
@@ -403,10 +429,15 @@ h4{
     padding: 0;
     display: flex;
     justify-content: center;
+    max-height: 100%;
+  }
+
+  .about-container img{
+    min-width: 30em;
   }
 
   .popup-style{
-    min-height: 1px;
+    min-height: 1px; /*Remove later*/
     height: 40em;
     max-width: 40em;
   }
@@ -427,13 +458,11 @@ h4{
 
   .staff-container .public-content{
     min-height: 20em;
-    width: 80%;
-    margin: 3em;
+    width: 90%;
   }
   .staff-container img{
     width: 100%;
     max-width: 20em;
-    margin-bottom: 2em;
   }
 
 }
@@ -443,18 +472,13 @@ h4{
     grid-template-columns: 1fr 3fr 1fr;
   }
 
-  .public-content picture, .public-content p{
-    width:100%;
-    margin-bottom: 0;
-  }
-
   .hamburger-menu{
     width: 20%;
   }
   .hamburger-menu ul{
     width: 15vw;
   }
-  .container .public-content{
-    height: 100%;
+  .container .car-content{
+    height: 80%;
   }
 }

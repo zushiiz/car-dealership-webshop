@@ -7,14 +7,14 @@ const displayed_cars = [
 ]
 
 const car_images = [
-  {id:1, sImg:"carNormal.jpg", image:"carSmall.png", banner:"placeholder.jpg"},
+  {id:1, sImg:"carNormal.jpg", image:"carSmall.png", banner:"carBanner.png"},
   {id:2, sImg:"carNormal.jpg", image:"carSmall.png", banner:"carBanner.png"},
-  {id:3, sImg:"carNormal.jpg", image:"carSmall.png", banner:"carBanner.png"},
-  {id:4, sImg:"carNormal.jpg", image:"carSmall.png", banner:"carBanner.png"},
-  {id:5, sImg:"carNormal.jpg", image:"carSmall.png", banner:"carBanner.png"}
+  {id:3, sImg:"placeholder.jpg", image:"placeholder2.jpg", banner:"carBanner.png"},
+  {id:4, sImg:"placeholder.jpg", image:"placeholder2.jpg", banner:"placeholder.jpg"},
+  {id:5, sImg:"placeholder.jpg", image:"placeholder2.jpg", banner:"carBanner.png"}
 ]
 /*
-note carNormal and carSmall img names are switched - too lazy to rename picture
+note carNormal and carSmall img names are switched - too lazy to rename files
 normal image - 1269x719
 small image - 800x400
 banner image - 1920x600
@@ -43,7 +43,7 @@ export default function CarContainer(){
     }}
     key={item.id}
     >
-      <section className="public-content">
+      <section className="car-content">
 
         <picture className="car-image">
           <source media="(min-width:600px)" srcSet={carImg.image} />

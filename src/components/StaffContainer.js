@@ -1,5 +1,5 @@
 const displayed_staff = [
-  {name:"Staff Staffson", position:"N/A", image:"staff-no-img.png", id:1},
+  {name:"Staff Staffson", position:"CEO", image:"placeholder.jpg", id:1},
   {name:"Staff Staffson", position:"N/A", image:"staff-no-img.png", id:2},
   {name:"Staff Staffson", position:"N/A", image:"staff-no-img.png", id:3},
   {name:"Staff Staffson", position:"N/A", image:"staff-no-img.png", id:4},
@@ -15,8 +15,9 @@ const displayed_staff = [
 export default function StaffContainer(){
   const staffCard = displayed_staff.map(item =>
     <div className="public-content">
-      <img src={item.image} alt="staff img" className="staff-img"></img>
-
+      <picture>
+        <img src={item.image} alt="staff img" className="staff-img"/>
+      </picture>
       <section className="text-contents">
         <h3>{item.name}</h3>
         <span>{item.position}</span>
